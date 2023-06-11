@@ -85,7 +85,7 @@ footer {
 	width: 100%;
 	display: grid;
 	justify-items: center;
-	padding: 100px;
+	padding-top: 100px;
 }
 
 .backDrop {

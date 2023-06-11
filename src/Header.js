@@ -9,7 +9,6 @@ export default function Header() {
 				top: 0,
 				left: 0,
 				width: "100%",
-				padding: "20px",
 				zIndex: 999,
 			}}
 		>

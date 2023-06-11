@@ -65,7 +65,6 @@ const userNames = [
 	"mehedi_067",
 	"dusty_spider",
 	"ekra0",
-	"rahatkhan99",
 ];
 
 const allUsers = [...new Set(userNames)];
