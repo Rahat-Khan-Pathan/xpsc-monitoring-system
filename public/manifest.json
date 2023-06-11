@@ -1,0 +1,22 @@
+{
+	"short_name": "Codechef Cards",
+	"name": "Codechef Cards",
+	"start_url": ".",
+	"icons": [
+		{
+			"src": "icon.svg",
+			"type": "image/svg",
+			"purpose": "any",
+			"sizes": "any"
+		},
+		{
+			"src": "icon.png",
+			"type": "image/png",
+			"purpose": "any",
+			"sizes": "400x400"
+		}
+	],
+	"display": "standalone",
+	"theme_color": "#DADADA",
+	"background_color": "#191919"
+}
