@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./Card.css";
+import "./CardCodeforces.css";
 
 export default function CardCodeforces({ user_data, setShowModal }) {
 	const { firstName, lastName, handle, rank, rating, maxRating, maxRank } =
@@ -45,12 +45,14 @@ export default function CardCodeforces({ user_data, setShowModal }) {
 
 				<div className="cardRating">
 					<p>
-						{rank || "No Rank"} | {rating || "No Rating"}
+						Current - {rank || "No Rank"} | {rating || "No Rating"}
 					</p>
 				</div>
-				<div className="cardHighestRating">
+				<div className={`cardHighestRatingNew ${maxRank}`}>
 					{isActiveUser ? (
-						<h4>Max Rating - {maxRating || "No Rating"}</h4>
+						<h4>
+							Max - {maxRank || "No Rank"} | {maxRating || "No Rating"}
+						</h4>
 					) : (
 						<>
 							<h4>Inactive User</h4>

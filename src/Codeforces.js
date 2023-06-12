@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import Modal from "./Modal";
 import Spinner from "./Spinner";
 import CardCodeforces from "./CardCodeforces";
+import api from "./config.json";
 
 const userNames = [
 	"mdjobayed",
@@ -67,12 +68,15 @@ const userNames = [
 	"Mehethe_hasan",
 	"dusty_spider",
 	"EKRA_24",
+	"SHAKHAWAT_SHIHAB",
+	"Jison_Chakma",
+	"Coder_Dipta",
 ];
 
 const allUsers = [...new Set(userNames)];
 
 export default function Codeforces() {
-	const api_url = "https://codeforces.com/api/";
+	const api_url = api.apiTwo;
 
 	const [users, setUsers] = useState(allUsers.join(";")); // Current Users.
 	const [usersData, setUsersData] = useState([]); // Current Users Data.
@@ -129,7 +133,7 @@ export default function Codeforces() {
 	return (
 		<div className="App">
 			<Header />
-			<div className="Content">
+			<div className="Content" style={{ marginBottom: "50px" }}>
 				<div className="CardList">
 					{usersData
 						.sort((first, second) => {

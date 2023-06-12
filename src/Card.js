@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./Card.css";
-import { FaUserTimes } from "react-icons/fa";
 
 export default function Card({ user_data, setShowModal }) {
 	const {

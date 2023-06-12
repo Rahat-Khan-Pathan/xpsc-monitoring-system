@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import Card from "./Card";
 import Modal from "./Modal";
 import Spinner from "./Spinner";
-
+import api from "./config.json";
 const userNames = [
 	"md_jobayedi",
 	"toufik_cse21",
@@ -65,12 +65,15 @@ const userNames = [
 	"mehedi_067",
 	"dusty_spider",
 	"ekra0",
+	"shakhawat_cse",
+	"jison_jummo",
+	"mamun170902",
 ];
 
 const allUsers = [...new Set(userNames)];
 
 export default function Codechef() {
-	const api_url = "https://codechef-cards-api.onrender.com/";
+	const api_url = api.apiOne;
 
 	const [users, setUsers] = useState(allUsers); // Current Users.
 	const [usersData, setUsersData] = useState([]); // Current Users Data.
@@ -125,7 +128,7 @@ export default function Codechef() {
 	return (
 		<div className="App">
 			<Header />
-			<div className="Content">
+			<div className="Content" style={{ marginBottom: "50px" }}>
 				<div className="CardList">
 					{usersData
 						.sort((first, second) => {
