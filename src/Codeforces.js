@@ -45,7 +45,7 @@ const userNames = [
 	"asadullah147",
 	"sazit96",
 	"EKRA_24",
-	"17sharat",
+	"Nisikto",
 	"Mr_FM",
 	"Emondas",
 	"itzmrnh",
@@ -71,16 +71,102 @@ const userNames = [
 	"SHAKHAWAT_SHIHAB",
 	"Jison_Chakma",
 	"Coder_Dipta",
+	// "rahat_khan_pathan",
+];
+const userNames2 = [
+	"ahammed.sabuj_",
+	"abdul_lah",
+	"phitron_batch_3",
+	"aminul_dola",
+	"Arjun_UiU",
+	"Arup_43",
+	"asif_abdullah",
+	"Atik203",
+	"ramim-ahmed",
+	"aushamim",
+	"UnSolvedBug_Farhan",
+	"HaqueWasif",
+	"hasan_dev04",
+	"Hironmoy_Ray",
+	"imran_258",
+	"_BigHero",
+	"Fazly-Fardin",
+	"mjony",
+	"Jubayer__Hossain",
+	"kaium2020",
+	"kausar0.5",
+	"Khushnor_Rahman_Meem",
+	"Ayirbik",
+	"labib1204",
+	"mdmahabub55",
+	"Mahbub_Turza",
+	"mahmudqudrati",
+	"Masud_Abdullah",
+	"Hossain0012",
+	"mdalifahmed114510",
+	"hasan_03",
+	"learnerminj",
+	"Heisenburg-120",
+	"_Grandmaster",
+	"Md-Merazul-Islam",
+	"mehadi40758",
+	"mohiuddin_sizan",
+	"MOIN46",
+	"Morshed_Alam33",
+	"Mubarak_Hossain",
+	"muhammad_sayem",
+	"BLACK-HEAD",
+	"nasimahemd0909",
+	"MD.Naerullah",
+	"niloy097",
+	"niloymahmudapu",
+	"onceuponnion_9",
+	"-11",
+	"Black_Pencil",
+	"rakibulhassan29052000",
+	"ratulhasan2108",
+	"Rayhan_03",
+	"sanzidtonu",
+	"RiadMEhedi",
+	"robot_riad",
+	"Rocky20809",
+	"rollno_infinity",
+	"S.Popy",
+	"sadif609",
+	"samiunblack",
+	"SSKsan",
+	"schrodingersmile",
+	"shafaitzaman1234",
+	"shafiq1st",
+	"makmodol1173",
+	"sharif_dupharma",
+	"Mistake_factory",
+	"CRYP70N1C",
+	"BugBane_Hridoy",
+	"b14ckb3rry",
+	"soaib056",
+	"Soumick",
+	"srayosikder",
+	"sumit_chandra",
+	"Sunjida_Akter",
+	"SyedaGulnaj",
+	"tahdiislam",
+	"tahsin005",
+	"talatmcc",
+	"voidd_nulll",
 ];
 
 const allUsers = [...new Set(userNames)];
+const allUsers2 = [...new Set(userNames2)];
 
 export default function Codeforces() {
 	const api_url = api.apiTwo;
 
-	const [users, setUsers] = useState(allUsers.join(";")); // Current Users.
+	const users = allUsers.join(";");
+	const users2 = allUsers2.join(";");
 	const [usersData, setUsersData] = useState([]); // Current Users Data.
 	const [isLoading, setIsLoading] = useState(true);
+	const [select, setSelect] = useState("batch3");
 
 	// To Control State Of Modal.
 	const [showModal, setShowModal] = useState({
@@ -120,20 +206,68 @@ export default function Codeforces() {
 
 	// Loading Stored User And Fetching User Data. [RUNS ONLY ONCE]
 	useEffect(() => {
-		fetchData(users);
+		fetchData(users2);
 	}, []);
 
 	useEffect(() => {
-		if (allUsers.length === usersData.length) {
+		// console.log(users.length, usersData.length);
+		if (
+			allUsers.length === usersData.length ||
+			allUsers2.length === usersData.length
+		) {
 			setIsLoading(false);
 		} else {
 			setIsLoading(true);
 		}
-	}, [users, usersData]);
+	}, [select, usersData]);
 	return (
 		<div className="App">
 			<Header />
-			<div className="Content" style={{ marginBottom: "50px" }}>
+			<div
+				className="Content"
+				style={{ marginBottom: "50px", paddingTop: "100px" }}
+			>
+				<div className="dropdown w-100 text-center">
+					<button
+						className="btn py-3  btn-secondary dropdown-toggle w-25"
+						type="button"
+						data-bs-toggle="dropdown"
+						aria-expanded="false"
+					>
+						{select === "batch2" ? "Barch 2" : "Batch 3"}
+					</button>
+					<ul
+						className="dropdown-menu w-25 text-center"
+						style={{ cursor: "pointer" }}
+					>
+						<li>
+							<p
+								className="dropdown-item"
+								onClick={() => {
+									setSelect("batch3");
+									setIsLoading(true);
+									fetchData(users2);
+								}}
+								style={{ cursor: "pointer" }}
+							>
+								Batch 3
+							</p>
+						</li>
+						<li>
+							<p
+								className="dropdown-item"
+								onClick={() => {
+									setSelect("batch2");
+									setIsLoading(true);
+									fetchData(users);
+								}}
+								style={{ cursor: "pointer" }}
+							>
+								Batch 2
+							</p>
+						</li>
+					</ul>
+				</div>
 				<div className="CardList">
 					{usersData
 						.sort((first, second) => {

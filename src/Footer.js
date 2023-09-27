@@ -11,7 +11,11 @@ export default function Footer() {
 				zIndex: 999,
 			}}
 		>
-			<p>© Copyright Yash Chaudhari. Modified by Rahat Khan Pathan</p>
+			<p className="pt-2">
+				© Modified by{" "}
+				<span className="text-primary fw-bold">Rahat Khan Pathan</span>.
+				Copyright Yash Chaudhari.{" "}
+			</p>
 		</footer>
 	);
 }
