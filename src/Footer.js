@@ -15,6 +15,15 @@ export default function Footer() {
 				© Modified by{" "}
 				<span className="text-primary fw-bold">Rahat Khan Pathan</span>.
 				Copyright Yash Chaudhari.{" "}
+				<a
+					className="github fw-bold"
+					target="_blank"
+					rel="noreferrer"
+					style={{ cursor: "pointer" }}
+					href="https://github.com/Rahat-Khan-Pathan/xpsc-monitoring-system"
+				>
+					Github Repository
+				</a>
 			</p>
 		</footer>
 	);
