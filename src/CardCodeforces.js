@@ -50,7 +50,7 @@ export default function CardCodeforces({ user_data, setShowModal }) {
 				</div>
 				<div className={`cardHighestRatingNew ${maxRank}`}>
 					{isActiveUser ? (
-						<h4>
+						<h4 className="fw-bold fs-5">
 							Max - {maxRank || "No Rank"} | {maxRating || "No Rating"}
 						</h4>
 					) : (

@@ -75,6 +75,8 @@
 	justify-content: space-around;
 
 	text-align: center;
+	font-size: 1.2rem;
+	font-weight: bold;
 }
 .cardHighestRating p {
 	color: var(--accent);
